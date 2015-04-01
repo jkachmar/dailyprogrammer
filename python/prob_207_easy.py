@@ -13,12 +13,17 @@ Your program should take a DNA squence as input
 and return the complementary strand.
 """
 
-pairs = {'A': 'T',
-         'T': 'A',
-         'G': 'C',
-         'C': 'G'}
 
-strand = input("Enter a series of DNA base pairs:\n").split()
-mirror = [pairs[x] for x in strand]
+def base_pair(strand):
+    """Return matching base pairs for a strand of DNA."""
+    pairs = {'A': 'T',
+             'T': 'A',
+             'G': 'C',
+             'C': 'G'}
 
-print(' '.join(mirror))
+    mirror = ' '.join([pairs[x] for x in strand.split()])
+    return(mirror)
+
+if __name__ == '__main__':
+    strand = input("Enter a series of DNA base pairs:\n")
+    print(base_pair(strand))
